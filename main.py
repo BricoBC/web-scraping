@@ -6,10 +6,10 @@ from selenium.webdriver.edge.options import Options
 from selenium.webdriver.support.ui import Select
 
 try:   
-    service = Service('D:\\Programas\\edgedriver_win64\\msedgedriver.exe')
-    options = Options()
+    # service = Service('D:\\Programas\\edgedriver_win64\\msedgedriver.exe')
+    # options = Options()
 
-    driver = webdriver.Edge(service=service, options=options)
+    driver = webdriver.Edge()
     website = 'https://www.adamchoi.co.uk/'
 
     driver.get(website)
@@ -24,10 +24,11 @@ try:
     btn_all_match.click()
     
     s_country =  Select(driver.find_element(By.ID, 'country'))
-
-    # s_country = Select(driver.find_element(By.ID, 'countrySelect'))
     s_country.select_by_visible_text('Mexico')
 
+    matches = driver.find_elements(By.TAG_NAME, 'tr')
+    for match in matches:
+        print(match.text)
 
 finally:
     time.sleep(5) 
