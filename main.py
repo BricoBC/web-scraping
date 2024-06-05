@@ -14,10 +14,21 @@ try:
 
     driver.get(website)
 
-    btn_win = driver.find_element(By.XPATH, '//*[@id="side-menu"]/li[13]/a')
-    btn_win.click()
+    btn_team_goals = driver.find_element(By.XPATH, '//li[@ng-class="{active: sc.collapseVar === 8}"]')
+    btn_team_goals.click()
 
+    btn_detailed = driver.find_element(By.XPATH, '//a[@ui-sref="site.teamgoalsdetailed"]')
+    btn_detailed.click()
+
+    btn_all_match = driver.find_element(By.XPATH, '//label[@analytics-event="All matches"]')
+    btn_all_match.click()
     
+    s_country =  Select(driver.find_element(By.ID, 'country'))
+
+    # s_country = Select(driver.find_element(By.ID, 'countrySelect'))
+    s_country.select_by_visible_text('Mexico')
+
+
 finally:
     time.sleep(5) 
     driver.quit()
