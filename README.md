@@ -1,5 +1,7 @@
 # WEB SCRAPING
 
-Para este proyecto se utiliza el lenguaje de programación de python con la libreria de selenium.
+Web scraing es una técnica que permite obtener información a través de una página publica o de una página que tenemos el acceso a dicha pagina. Este es un proyecto que permite hacer la extracción de datos de la Liga MX y se visualiza el marcador de los juegos.
 
-Primero se debe de hacer la actualización del navegador que se vaya a utilizar (en mi caso Edge), y se busca edgedriver.
+## Visualización del código funcionando
+
+[Ver video..](https://drive.google.com/file/d/17oLhMqgQYsYmh08s7fo26nh_-eBUHMjk/view?usp=drive_link)
