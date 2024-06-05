@@ -37,7 +37,8 @@ try:
         print(match.text)
         liga_mx.append(match.text)
 
-
+    df = pd.DataFrame({'Liga MX': liga_mx})
+    df.to_csv('players.csv',index=False)
 except:
     print("Vuelvelo a ejecutar...")
 
