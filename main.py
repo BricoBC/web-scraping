@@ -14,10 +14,10 @@ try:
 
     driver.get(website)
 
-    btn_team_goals = driver.find_element(By.XPATH, '//li[@ng-class="{active: sc.collapseVar === 8}"]')
-    btn_team_goals.click()
+    mult_s_team_goals = driver.find_element(By.XPATH, '//li[@ng-class="{active: sc.collapseVar === 8}"]') #Elemento padre
+    mult_s_team_goals.click()
 
-    btn_detailed = driver.find_element(By.XPATH, '//a[@ui-sref="site.teamgoalsdetailed"]')
+    btn_detailed = mult_s_team_goals.find_element(By.XPATH, '//a[@ui-sref="site.teamgoalsdetailed"]') #Elemento hijo
     btn_detailed.click()
 
     btn_all_match = driver.find_element(By.XPATH, '//label[@analytics-event="All matches"]')
@@ -31,5 +31,5 @@ try:
         print(match.text)
 
 finally:
-    time.sleep(5) 
+    time.sleep(5)  # tiempo implicito: detener el proceso por n segundos
     driver.quit()
